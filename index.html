@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyncStream - Watch Together</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1 class="logo">🎬 SyncStream</h1>
+                <p class="tagline">Premium Watch-Together Experience</p>
+                <p class="description">Create private rooms, sync videos, and chat with friends in real-time</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="create-room-section">
+                <div class="room-card">
+                    <h2>Start Watching Together</h2>
+                    <p>Create a new room and invite your friends to watch videos together</p>
+                    
+                    <div class="input-group">
+                        <label for="videoUrl">YouTube Video URL</label>
+                        <input type="url" id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." required>
+                    </div>
+                    
+                    <button id="createRoomBtn" class="create-btn">
+                        <span class="btn-text">Create Room</span>
+                        <span class="btn-loader" style="display: none;">Creating...</span>
+                    </button>
+                </div>
+
+                <div id="roomCreated" class="room-created" style="display: none;">
+                    <h3>🎉 Room Created Successfully!</h3>
+                    <p>Share this link with your friends:</p>
+                    <div class="link-container">
+                        <input type="text" id="roomLink" readonly>
+                        <button id="copyLinkBtn" class="copy-btn">Copy</button>
+                    </div>
+                    <button id="joinRoomBtn" class="join-btn">Join Room</button>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🎥</div>
+                    <h3>Synchronized Playback</h3>
+                    <p>Everyone watches at the same time with perfect sync</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3>Real-time Chat</h3>
+                    <p>Chat with friends while watching your favorite videos</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Private Rooms</h3>
+                    <p>Secure, private rooms for you and your friends only</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 SyncStream. Built with ❤️ for better watching experiences.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

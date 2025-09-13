@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyncStream Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="room-container">
+        <header class="room-header">
+            <div class="room-info">
+                <h1>🎬 SyncStream</h1>
+                <span id="roomId" class="room-id"></span>
+            </div>
+            <div class="room-actions">
+                <button id="shareRoomBtn" class="share-btn">Share Room</button>
+                <button id="leaveRoomBtn" class="leave-btn">Leave</button>
+            </div>
+        </header>
+
+        <main class="room-main">
+            <div class="video-section">
+                <div class="video-container">
+                    <div id="videoPlayer"></div>
+                    <div class="video-overlay" id="videoOverlay">
+                        <div class="overlay-content">
+                            <h3>🎥 Ready to Watch?</h3>
+                            <p>Waiting for video to load...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-controls">
+                    <button id="playBtn" class="control-btn" disabled>
+                        <span class="play-icon">▶️</span>
+                        <span class="pause-icon" style="display: none;">⏸️</span>
+                    </button>
+                    <span id="videoTime" class="video-time">0:00 / 0:00</span>
+                    <div class="participants-count">
+                        <span id="participantCount">1</span> watching
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-section">
+                <div class="chat-header">
+                    <h3>💬 Chat</h3>
+                    <span id="onlineCount" class="online-count">1 online</span>
+                </div>
+                
+                <div id="chatMessages" class="chat-messages"></div>
+                
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" placeholder="Type a message..." disabled>
+                    <button id="sendBtn" class="send-btn" disabled>Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Join Modal -->
+    <div id="joinModal" class="modal">
+        <div class="modal-content">
+            <h2>Join the Room</h2>
+            <p>Enter your name to start chatting and watching together</p>
+            <div class="input-group">
+                <label for="userName">Your Name</label>
+                <input type="text" id="userName" placeholder="Enter your name" maxlength="20">
+            </div>
+            <button id="joinBtn" class="join-btn">Join Room</button>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="shareModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Share Room</h2>
+                <button class="close-btn" onclick="closeShareModal()">&times;</button>
+            </div>
+            <p>Share this link with your friends:</p>
+            <div class="link-container">
+                <input type="text" id="shareLink" readonly>
+                <button id="copyShareBtn" class="copy-btn">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="config.js"></script>
+    <script src="room.js"></script>
+</body>
+</html>
