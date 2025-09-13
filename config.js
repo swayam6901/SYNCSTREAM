@@ -1,14 +1,14 @@
 // Supabase Configuration
 // Replace these with your actual Supabase project credentials
 const SUPABASE_CONFIG = {
-    url: 'YOUR_SUPABASE_URL', // e.g., 'https://your-project.supabase.co'
-    anonKey: 'YOUR_SUPABASE_ANON_KEY' // Your public anon key
+    url: 'https://trghvobcfbgmsresikrm.supabase.co', // e.g., 'https://your-project.supabase.co'
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRyZ2h2b2JjZmJnbXNyZXNpa3JtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc2ODAwNTQsImV4cCI6MjA3MzI1NjA1NH0.RIWSnjXMQMK1NGJvLT3856uM_oY8-SFMhwzm6vAZy7M' // Your public anon key
 };
 
 // Check if Supabase credentials are configured
 const isSupabaseConfigured = () => {
-    return SUPABASE_CONFIG.url !== 'https://trghvobcfbgmsresikrm.supabase.co' && 
-           SUPABASE_CONFIG.anonKey !== 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRyZ2h2b2JjZmJnbXNyZXNpa3JtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc2ODAwNTQsImV4cCI6MjA3MzI1NjA1NH0.RIWSnjXMQMK1NGJvLT3856uM_oY8-SFMhwzm6vAZy7M' &&
+    return SUPABASE_CONFIG.url !== 'YOUR_SUPABASE_URL' && 
+           SUPABASE_CONFIG.anonKey !== 'YOUR_SUPABASE_ANON_KEY' &&
            SUPABASE_CONFIG.url.startsWith('http');
 };
 
